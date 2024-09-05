@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Types Example</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(220, 236, 69);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: rgb(179, 13, 41);
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2 {
+            color: rgb(47, 3, 56);
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin:auto 0;
+            display: block;
+            border-color: rgb(168, 69, 11);
+        }
+        .styled-image {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: blue;
+            box-shadow: 10px 10px 20px rgba(201, 198, 14, 0.5);
+            border: 5px solid rgb(172, 169, 22);
+        }
+    </style>
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Inline CSS -->
+    <div style="background-color: white; padding: 20px; margin: 20px;">
+        <h1 style="color: rgb(5, 82, 37);">WELCOME TO OUR LITTLE TACO SHOP!!</h1>
+    </div>
+    <div style="text-align: center;">
+        <img src="tacos.jpg" alt="tacos logo" usemap="#my logo">
+    </div>
+    <map name="my logo">
+        <area shape="poly" coords="184,310,185,273,198,237,221,215,248,197,276,191,289,177,319,159,339,159,366,157,389,153,403,158,419,166,433,175,455,181,465,195,477,204,483,221,493,240,505,249,507,262,517,277,520,298,517,313,507,335,485,343,461,348,440,353,418,357,387,362,359,366,335,367,180,,323" alt="tacos recipe" href="https://www.vegrecipesofindia.com/veg-taco-recipe/">
+        <area shape="circle" coords="349,348,228" alt="taco info" href="https://www.tacobell.co.in/nutritional-info">
+    </map>
+    <div class="image-container">
+        <p style="color:rgb(231, 82, 13);font: size 10px;"><i> TACOS AND DRINK</i></p>
+    </div>
+    <div style="background-color: white; padding: 20px; margin: 20px;">
+        <h1>ABOUT LITTLE TACO SHOP</h1>
+        <h2>Little Taco Shop was founded in 2024.</h2>
+        <p style="color: blue;font: size 20px;"><strong> Little Taco Shop</strong> Founded in 2024  is more than just a restaurant. it's a labor of love and a tribute to the timeless appeal of tacos. Our shop was born out of a deep passion for creating delicious, authentic tacos that bring people together. Every dish we serve is a reflection of our dedication to quality, flavor, and the joy of sharing a meal. <strong> </strong>.</p>
+        <p style="color:rgb(71, 13, 71) ;font-size:20px">Come and experience the passion, taste the difference, and join us in celebrating the simple, yet extraordinary, joy of tacos.</p>
+    </div>
+
+</body>
+</html>
