@@ -1,0 +1,17 @@
+thead th {
+    background-color: green; 
+    color: white(121, 17, 153); 
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color:rgb(212, 66, 66);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #1e86a0; 
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
