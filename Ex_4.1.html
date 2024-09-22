@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Taco Shop Order Form (Indian Style)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .error {
+      color: red;
+    }
+    input, select {
+      margin: 5px 0;
+      padding: 8px;
+      width: 100%;
+    }
+    label {
+      font-weight: bold;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      let name = document.forms["tacoForm"]["name"].value;
+      let phone = document.forms["tacoForm"]["phone"].value;
+      let email = document.forms["tacoForm"]["email"].value;
+      let address = document.forms["tacoForm"]["address"].value;
+      let taco = document.forms["tacoForm"]["taco"].value;
+      let errorMsg = "";
+
+      // Name validation
+      if (name === "") {
+        errorMsg += "Please enter your name.\n";
+      }
+
+      // Phone validation (Indian phone number validation)
+      if (phone === "" || !/^\d{10}$/.test(phone)) {
+        errorMsg += "Please enter a valid 10-digit phone number.\n";
+      }
+
+      // Email validation
+      if (email === "" || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        errorMsg += "Please enter a valid email address.\n";
+      }
+
+      // Address validation
+      if (address === "") {
+        errorMsg += "Please enter your address.\n";
+      }
+
+      // Taco selection validation
+      if (taco === "") {
+        errorMsg += "Please select a taco.\n";
+      }
+
+      // If there are errors, show them
+      if (errorMsg !== "") {
+        alert(errorMsg);
+        return false;
+      }
+
+      return true;  // Form is valid
+    }
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <h2>TACO SHOP ORDER FORM</h2>
+
+  <form name="tacoForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name">
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" placeholder="Enter your 10-digit phone number">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" placeholder="Enter your email">
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" placeholder="Enter your address">
+
+    <label for="taco">Select Taco:</label>
+    <select id="taco" name="taco">
+      <option value="">Select a taco</option>
+      <option value="Paneer Tikka Taco">Paneer Tikka Taco</option>
+      <option value="Chicken Tikka Taco">Chicken Tikka Taco</option>
+      <option value="Keema Taco">Keema Taco</option>
+      <option value="Dal Makhani Taco">Dal Makhani Taco</option>
+      <option value="Chaat Taco">Chaat Taco</option>
+    </select>
+
+    <button type="submit">Submit Order</button>
+  </form>
+</div>
+
+</body>
+</html>
