@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+    <h2>Order Form</h2>
+    <form action="ServletBill" method="post">
+        <label for="item1">Taco - $5</label>
+        <input type="number" id="item1" name="item1" min="0" value="0"><br><br>
+        
+        <label for="item2">Burrito - $7</label>
+        <input type="number" id="item2" name="item2" min="0" value="0"><br><br>
+        
+        <label for="item3">Nachos - $4</label>
+        <input type="number" id="item3" name="item3" min="0" value="0"><br><br>
+        
+        <label for="item4">Soda - $2</label>
+        <input type="number" id="item4" name="item4" min="0" value="0"><br><br>
+        
+        <button type="submit">Calculate Bill</button>
+    </form>
+</body>
+</html>
