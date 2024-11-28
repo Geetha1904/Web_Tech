@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #hoverText, #picture {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        #picture {
+            width: 100px;
+            height: auto;
+        }
+        #message {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: blue;
+        }
+        #hoverArea {
+            padding: 20px;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+        }
+        #tooltip {
+            position: absolute;
+            display: none;
+            background-color: yellow;
+            padding: 5px;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DISPLAYING TIME</h1>
+    <input type="text" id="timeInput" placeholder="Current Time" readonly>
+    <button id="seeTimeButton">See Time</button>
+
+    <br><br>
+
+    <label>Email:</label>
+    <input type="text" id="emailInput">
+    <br><br>
+
+    <label>Username:</label>
+    <input type="text" id="usernameInput">
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" id="passwordInput">
+    <br><br>
+
+    <button id="submitButton">Submit</button>
+    <br><br>
+
+    <div id="message"></div> <!-- This will show the messages -->
+
+    <!-- Image Hover Section -->
+    <div class="container">
+        <img src="Tacos 2.jpg" alt="Tacos" class="image">
+        <div class="text"> </div>
+    </div>
+
+    <!-- Hover Text Section -->
+    <div id="hoverText">Hello</div>
+
+
+    <script>
+        // Function to display the time
+        const seeTimeButton = document.getElementById('seeTimeButton');
+        seeTimeButton.addEventListener('click', function(event) {
+            const now = new Date();
+            document.getElementById('timeInput').value = now.toLocaleTimeString();
+
+            // Prevent event from propagating to the document body
+            event.stopPropagation();
+            toggleBackgroundColor();
+        });
+
+        const hoverArea = document.getElementById('hoverArea');
+        const messageDiv = document.getElementById('message');
+        const picture = document.getElementById('picture');
+        const tooltip = document.getElementById('tooltip');
+
+        // Mouse events for hover area
+        hoverArea.addEventListener('mouseenter', function() {
+            messageDiv.textContent = 'Bring the mouse into the division zone';
+        });
+
+        hoverArea.addEventListener('mouseover', function() {
+            messageDiv.textContent = 'Mouse over';
+        });
+
+        hoverArea.addEventListener('mousemove', function() {
+            messageDiv.textContent = 'Mouse on';
+        });
+
+        hoverArea.addEventListener('mouseout', function() {
+            messageDiv.textContent = ''; // Clear the message
+        });
+
+        // Show tooltip when the mouse is over the image
+        picture.addEventListener('mouseover', function() {
+            tooltip.style.display = 'block';
+            tooltip.style.top = (picture.offsetTop - tooltip.offsetHeight - 5) + 'px'; // Position above the image
+            tooltip.style.left = picture.offsetLeft + 'px'; // Align with the image
+        });
+
+        // Hide tooltip when the mouse leaves the image
+        picture.addEventListener('mouseout', function() {
+            tooltip.style.display = 'none';
+        });
+
+        // Toggle background color on click
+        function toggleBackgroundColor() {
+            document.body.style.backgroundColor = 
+                document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+        }
+
+        // Change background color when clicking on the body or seeTimeButton
+        document.body.addEventListener('click', toggleBackgroundColor);
+    </script>
+
+</body>
+</html>
